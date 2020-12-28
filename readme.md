@@ -2,4 +2,4 @@
 
 Projeto do todo em React, do curso Cod3r
 
-URL: http://localhost:3000
+URL: http://localhost:8080
