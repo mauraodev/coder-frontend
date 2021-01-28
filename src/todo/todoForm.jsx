@@ -14,7 +14,7 @@ export default (props) => (
     </Grid>
 
     <Grid cols="12 3 2">
-      <IconButton style="primary" icon="plus" />      
+      <IconButton style="primary" icon="plus" click={props.handleAdd} />
     </Grid>
   </div>
 );
