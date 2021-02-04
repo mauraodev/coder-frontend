@@ -22,6 +22,7 @@ class Todo extends Component {
     this.handleMarkAsPending = this.handleMarkAsPending.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleClear = this.handleClear.bind(this);
 
     this.refresh();
   }
@@ -70,6 +71,10 @@ class Todo extends Component {
     axios.delete(`${URL}/${todo._id}`).then(() => this.refresh(this.state.description));
   }
 
+  handleClear() {
+    this.refresh()
+  }
+
   render() {
     return (
       <div>
@@ -79,6 +84,7 @@ class Todo extends Component {
           handleChange={this.handleChange}
           handleAdd={this.handleAdd}
           handleSearch={this.handleSearch}
+          handleClear={this.handleClear}
         />
         <TodoList
           list={this.state.list}
