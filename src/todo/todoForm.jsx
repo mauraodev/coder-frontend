@@ -17,6 +17,7 @@ export default (props) => (
 
     <Grid cols="12 3 2">
       <IconButton style="primary" icon="plus" click={props.handleAdd} />
+      <IconButton style="info" icon="search" click={props.handleSearch} />
     </Grid>
   </div>
 );
