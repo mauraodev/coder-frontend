@@ -12,6 +12,6 @@ export const search = () => {
 
   return {
     type: 'TODO_SEARCHED',
-    payload: request.data,
+    payload: request,
   }
 }
