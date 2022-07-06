@@ -11,6 +11,9 @@ export default (state = INITIAL_STATE, action) => {
     case 'TODO_SEARCHED':
       return {...state, list: action.payload.data}
 
+    case 'TODO_ADD':
+      return {...state, description: ''}
+
     default:
       return state
   }
