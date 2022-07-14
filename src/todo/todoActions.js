@@ -22,7 +22,7 @@ export const add = (description) => {
       .post(URL, { description })
       .then((resp) =>
         dispatch({
-          type: "TODO_ADDED",
+          type: "TODO_CLEAR",
           payload: resp.data,
         })
       )
@@ -45,3 +45,17 @@ export const markAsPedding = (todo) => {
       .then(() => dispatch(search()));
   };
 };
+
+export const remove = (todo) => {
+  return (dispatch) => {
+    axios
+      .delete(`${URL}/${todo._id}`)
+      .then(() => dispatch(search()));
+  };
+};
+
+export const clear = () => {
+  return {
+    type: 'TODO_CLEAR',
+  }
+}
