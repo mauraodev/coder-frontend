@@ -3252,12 +3252,22 @@
   dependencies:
     "balanced-match" "^1.0.0"
 
+"redux-multi@^0.1.12":
+  "integrity" "sha512-h5achUJyeQFwj9MvYG+EtiVcOdjRYB342YVz8qjMQz/13tH+hRW+T5srcwrA7T0c78nyu83OLJBCXbiSSHyLSQ=="
+  "resolved" "https://registry.npmjs.org/redux-multi/-/redux-multi-0.1.12.tgz"
+  "version" "0.1.12"
+
 "redux-promise@^0.5.3":
   "integrity" "sha512-rjZJnKCuhPZQKuHu9ZbYeeVvV2ftjemke6CGFVgeUmnqx1C58EEPM30RmSXfIcZjxzT7KNAJLD78t+7fsQaKow=="
   "resolved" "https://registry.npmjs.org/redux-promise/-/redux-promise-0.5.3.tgz"
   "version" "0.5.3"
   dependencies:
     "flux-standard-action" "^0.6.1"
+
+"redux-thunk@^2.2.0":
+  "integrity" "sha512-OOFWh9mt/7i94QPq4IAxhSIUyfIJJRnk6pe1IwgXethQik3kyg1wuxVZZlW9QOmL5rP/MrwzV+Cb+/HBKlvM8Q=="
+  "resolved" "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.2.0.tgz"
+  "version" "2.2.0"
 
 "redux@^2.0.0 || ^3.0.0 || ^4.0.0-0", "redux@^3.6.0":
   "integrity" "sha512-pNqnf9q1hI5HHZRBkj3bAngGZW/JMCmexDlOxw4XagXY2o1327nHH54LoTjiPJ0gizoqPDRqWyX/00g0hD6w+A=="

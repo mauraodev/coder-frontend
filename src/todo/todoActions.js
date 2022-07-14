@@ -17,13 +17,31 @@ export const search = () => {
 };
 
 export const add = (description) => {
-  const request = axios.post(URL, { description });
+  return (dispatch) => {
+    axios
+      .post(URL, { description })
+      .then((resp) =>
+        dispatch({
+          type: "TODO_ADDED",
+          payload: resp.data,
+        })
+      )
+      .then(() => dispatch(search()));
+  };
+};
 
-  return [
-    {
-      type: "TODO_ADDED",
-      payload: request,
-    },
-    search(),
-  ];
+export const markAsDone = (todo) => {
+  return (dispatch) => {
+    axios
+      .put(`${URL}/${todo._id}`, { ...todo, done: true })
+      .then(() => dispatch(search()));
+  };
+};
+
+export const markAsPedding = (todo) => {
+  return (dispatch) => {
+    axios
+      .put(`${URL}/${todo._id}`, { ...todo, done: false })
+      .then(() => dispatch(search()));
+  };
 };
