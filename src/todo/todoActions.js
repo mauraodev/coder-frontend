@@ -8,11 +8,13 @@ export const changeDescription = (event) => ({
 });
 
 export const search = () => {
-  const request = axios.get(`${URL}?sort=-createdAt`);
+  return (dispatch, getState) => {
+    const description = getState().todo.description;
 
-  return {
-    type: "TODO_SEARCHED",
-    payload: request,
+    const search = description ? `&description__regex=/${description}/` : "";
+    axios
+      .get(`${URL}?sort=-createdAt${search}`)
+      .then((resp) => dispatch({ type: "TODO_SEARCHED", payload: resp.data }));
   };
 };
 
@@ -48,14 +50,12 @@ export const markAsPedding = (todo) => {
 
 export const remove = (todo) => {
   return (dispatch) => {
-    axios
-      .delete(`${URL}/${todo._id}`)
-      .then(() => dispatch(search()));
+    axios.delete(`${URL}/${todo._id}`).then(() => dispatch(search()));
   };
 };
 
 export const clear = () => {
-  return {
-    type: 'TODO_CLEAR',
-  }
-}
+  return [{
+    type: "TODO_CLEAR",
+  }, search()];
+};
